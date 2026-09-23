@@ -1,20 +1,26 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package mian;
 
-/**
- *
- * @author HarasztiMihály(SZF_N
- */
 public class Main {
-
-    /**
-     * @param args the command line arguments
-     */
+    static String[] pakli = new String[22];//index 0-21
+    static String[] kevert = new String[22];
+    
     public static void main(String[] args) {
-        // TODO code application logic here
+
+        kever(oszlop);
     }
     
+    private static void kever(int oszlop) {
+        String[] regiPak = new String[22];
+        for (int i = 1; i <= 21; i++) {
+            regiPak[i] = pakli[i];
+        }
+    
+        switch(oszlop) {
+            case 1:
+                for (int i = 1; i <= 7; i++) {
+                    pakli[i]    = regiPak[20-(i-1)*3];
+                    pakli[i+7]  = regiPak[19-(i-1)*3];
+                    pakli[i+14] = regiPak[21-(i-1)*3];
+                }
+                break;
 }
