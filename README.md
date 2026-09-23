@@ -1,0 +1,2 @@
+# Gondolat olvasó
+## működés
