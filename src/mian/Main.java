@@ -42,4 +42,8 @@ public class Main {
         for (int i = 0; i < pakli.length; i++) pakli[i]=i;
         return pakli;
     }
+    
+    static int[] kever(int[] pakli, int valasztott oszlop){
+        
+    }
 }
