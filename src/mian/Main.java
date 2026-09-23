@@ -1,19 +1,17 @@
 package mian;
 
 public class Main {
-    static String[] pakli = new String[22];//index 0-21
-    static String[] kevert = new String[22];
+
+    static String[] kartyak = kartyakMaker();
+    static int[] pakli = pakliMaker();
     
     public static void main(String[] args) {
-
-        kever(oszlop);
+        
     }
     
     private static void kever(int oszlop) {
-        String[] regiPak = new String[22];
-        for (int i = 1; i <= 21; i++) {
-            regiPak[i] = pakli[i];
-        }
+        int[] regiPak = new int[21];
+            regiPak = pakli;
     
         switch(oszlop) {
             case 1:
@@ -23,4 +21,25 @@ public class Main {
                     pakli[i+14] = regiPak[21-(i-1)*3];
                 }
                 break;
+        }
+    }
+    
+    static String[] kartyakMaker(){
+        String[] szinek = {"P","Z","T","M"};
+        String[] szamok = {"asz","kir","fel","8","9","10"};
+        String[] kartya_pakli = new String[21];
+        int ikartyak = 0;
+        for(int iszin = 0; iszin<szinek.length; iszin++){
+            for(int iszam = 0; iszam<("M".equals(szinek[iszin])? 3 :szamok.length); iszam++){
+                kartya_pakli[ikartyak++] = szinek[iszin] + "_" + szamok[iszam];
+            }
+        }
+        return kartya_pakli;
+    }
+    
+    static int[] pakliMaker(){
+        int[] pakli = new int[21];
+        for (int i = 0; i < pakli.length; i++) pakli[i]=i;
+        return pakli;
+    }
 }
